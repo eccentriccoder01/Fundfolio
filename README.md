@@ -57,7 +57,7 @@ Experience Fundfolio live here: [**Fundfolio**](https://www.google.com/search?q=
 
 ## 📸 Screenshots
 
-<div align="center"><img src="App.png"/></div>
+<div align="center"><img src="App.jpeg"/></div>
 
 ## 📺 Video Explanation
 
