@@ -2,7 +2,7 @@
 
 # <div align="center">FUNDFOLIO</div>
 
-## A modern and intuitive React+Vite based chatbot
+## Modern Budget Allocation & Financial Management System
 
 Fundfolio is a simple but comprehensive financial management application built with React that helps efficiently allocate and track budgets across departments. With intuitive visualisations and real-time updates, it provides complete financial oversight at a glance.
 
