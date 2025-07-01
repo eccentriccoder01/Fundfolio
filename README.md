@@ -33,7 +33,7 @@ Fundfolio is a simple but comprehensive financial management application built w
 
 ## 🚀 Live Demo
 
-Experience Fundfolio live here: [**Fundfolio**](https://www.google.com/search?q=https://Fundfolio.vercel.app)
+Experience Fundfolio live here: [**Fundfolio**](https://www.google.com/search?q=https://Fund-folio.vercel.app)
 
  <div align="center">
  <p>
