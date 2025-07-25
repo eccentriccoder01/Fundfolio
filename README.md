@@ -72,9 +72,6 @@ For a detailed walkthrough of Fundfolio's features and how to use them, check ou
 * **CSS Modules**: For scoped component styling
 * **Modern CSS**: Flexbox, Grid, and custom properties
 
-Here's the corrected installation and setup section for your React app:
-
-```markdown
 ## ⚙️ Installation and Setup
 
 To run Fundfolio locally:
