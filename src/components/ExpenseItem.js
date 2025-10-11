@@ -19,9 +19,9 @@ const ExpenseItem = (props) => {
         if (amount > remaining) {
             dispatch({
                 type: 'ADD_NOTIFICATION',
-                payload: { 
-                    message: `Cannot add ${currency}${amount}. Only ${currency}${remaining} remaining!`, 
-                    type: 'error' 
+                payload: {
+                    message: `Cannot add ${currency}${amount}.Only ${currency}${remaining} remaining!`,
+                    type: 'error'
                 }
             });
             return;
@@ -67,23 +67,23 @@ const ExpenseItem = (props) => {
         <tr>
             <td>
                 <div className='department-name'>
-                    <div 
+                    <div
                         className='department-icon'
-                        style={{background: props.color || '#6b7280'}}
+                        style={{ background: props.color || '#6b7280' }}
                     >
                         {props.icon || '🏢'}
                     </div>
                     <div>
-                        <div style={{fontWeight: '600', color: 'var(--text-primary)'}}>
+                        <div style={{ fontWeight: '600', color: 'var(--text-primary)' }}>
                             {props.name}
                         </div>
-                        <div style={{fontSize: '0.75rem', color: 'var(--text-secondary)'}}>
+                        <div style={{ fontSize: '0.75rem', color: 'var(--text-secondary)' }}>
                             {props.cost > 0 ? 'Active allocation' : 'No allocation'}
                         </div>
                     </div>
                 </div>
             </td>
-            
+
             <td>
                 <div className='allocation-amount'>
                     {props.currency}{props.cost.toLocaleString()}
@@ -101,7 +101,7 @@ const ExpenseItem = (props) => {
                             borderRadius: '2px',
                             overflow: 'hidden'
                         }}>
-                            <div 
+                            <div
                                 style={{
                                     width: `${Math.min((props.cost / 5000) * 100, 100)}%`,
                                     height: '100%',
@@ -113,17 +113,17 @@ const ExpenseItem = (props) => {
                     </div>
                 )}
             </td>
-            
+
             <td>
                 <div className='action-buttons'>
-                    <button 
+                    <button
                         className='action-btn increase'
                         onClick={() => increaseAllocation(10)}
                         title="Add £10"
                     >
                         +10
                     </button>
-                    <button 
+                    <button
                         className='action-btn decrease'
                         onClick={() => decreaseAllocation(10)}
                         title="Reduce £10"
@@ -137,36 +137,36 @@ const ExpenseItem = (props) => {
                     </button>
                 </div>
             </td>
-            
+
             <td>
                 {showCustomInput ? (
-                    <div style={{display: 'flex', gap: '0.5rem', alignItems: 'center'}}>
+                    <div style={{ display: 'flex', gap: '0.5rem', alignItems: 'center' }}>
                         <input
                             type="number"
                             value={customAmount}
                             onChange={(e) => setCustomAmount(parseInt(e.target.value) || 0)}
                             className="form-input"
-                            style={{width: '80px', padding: '0.25rem 0.5rem', fontSize: '0.75rem'}}
+                            style={{ width: '80px', padding: '0.25rem 0.5rem', fontSize: '0.75rem' }}
                             min="1"
                             max={remaining}
                         />
-                        <button 
+                        <button
                             className='action-btn increase'
                             onClick={handleCustomAmount}
-                            style={{fontSize: '0.75rem'}}
+                            style={{ fontSize: '0.75rem' }}
                         >
                             ✓
                         </button>
-                        <button 
+                        <button
                             className='action-btn decrease'
                             onClick={() => setShowCustomInput(false)}
-                            style={{fontSize: '0.75rem'}}
+                            style={{ fontSize: '0.75rem' }}
                         >
                             ✕
                         </button>
                     </div>
                 ) : (
-                    <button 
+                    <button
                         className='action-btn'
                         onClick={() => setShowCustomInput(true)}
                         style={{
@@ -181,17 +181,17 @@ const ExpenseItem = (props) => {
                     </button>
                 )}
             </td>
-            
+
             <td>
-                <button 
+                <button
                     className='action-btn delete'
                     onClick={handleDeleteExpense}
                     title={`Reset ${props.name} allocation`}
                 >
-                    🗑️
+                    🗑
                 </button>
             </td>
-        </tr>
+        </tr >
     );
 };
 
