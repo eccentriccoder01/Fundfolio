@@ -6,10 +6,19 @@ const ExpenseItem = (props) => {
     const [customAmount, setCustomAmount] = useState(100);
     const [showCustomInput, setShowCustomInput] = useState(false);
 
-    const handleDeleteExpense = () => {
+    const handleResetExpense = () => {
         if (window.confirm(`Are you sure you want to reset the allocation for ${props.name}?`)) {
             dispatch({
                 type: 'DELETE_EXPENSE',
+                payload: props.name,
+            });
+        }
+    };
+
+    const handleDeleteDepartment = () => {
+        if (window.confirm(`Are you sure you want to permanently delete the ${props.name} department? This action cannot be undone.`)) {
+            dispatch({
+                type: 'REMOVE_DEPARTMENT',
                 payload: props.name,
             });
         }
@@ -20,7 +29,7 @@ const ExpenseItem = (props) => {
             dispatch({
                 type: 'ADD_NOTIFICATION',
                 payload: {
-                    message: `Cannot add ${currency}${amount}.Only ${currency}${remaining} remaining!`,
+                    message: `Cannot add ${currency}${amount}. Only ${currency}${remaining} remaining!`,
                     type: 'error'
                 }
             });
@@ -183,13 +192,34 @@ const ExpenseItem = (props) => {
             </td>
 
             <td>
-                <button
-                    className='action-btn delete'
-                    onClick={handleDeleteExpense}
-                    title={`Reset ${props.name} allocation`}
-                >
-                    🗑
-                </button>
+                <div style={{ display: 'flex', gap: '0.5rem', alignItems: 'center' }}>
+                    <button
+                        className='action-btn'
+                        onClick={handleResetExpense}
+                        title={`Reset ${props.name} allocation to 0`}
+                        style={{
+                            background: 'var(--warning-color, #f59e0b)',
+                            color: 'white',
+                            fontSize: '0.75rem',
+                            padding: '0.25rem 0.5rem'
+                        }}
+                    >
+                        🔄 Reset
+                    </button>
+                    <button
+                        className='action-btn delete'
+                        onClick={handleDeleteDepartment}
+                        title={`Permanently delete ${props.name} department`}
+                        style={{
+                            background: 'var(--error-color, #ef4444)',
+                            color: 'white',
+                            fontSize: '0.75rem',
+                            padding: '0.25rem 0.5rem'
+                        }}
+                    >
+                        🗑️ Delete
+                    </button>
+                </div>
             </td>
         </tr >
     );

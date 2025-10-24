@@ -108,7 +108,7 @@ const ExpenseList = () => {
                         </th>
                         <th>Actions</th>
                         <th>Quick Adjust</th>
-                        <th>Manage</th>
+                        <th>Reset & Delete</th>
                     </tr>
                 </thead>
                 <tbody>
